@@ -5302,6 +5302,63 @@ let BattleAbilities = {
     rating: 5,
     num: -10
   },
+	  godforce: {
+    shortDesc:
+      "This Pokemon's attacks that are not very effective deals significantly more damage.",
+    onModifyDamage: function(damage, source, target, move) {
+      if (move.typeMod < 0) {
+        this.debug("Tinted Lens boost");
+        return this.chainModify(2.5);
+      }
+    },
+    id: "godforce",
+    name: "God Force",
+    rating: 5,
+    num: -9
+  },
+  noctem: {
+    shortDesc: "On switch-in, this Pokemon summons Darkness.",
+    onStart: function(source) {
+      this.setWeather("darkness");
+    },
+    id: "noctem",
+    name: "Noctem",
+    rating: 4.5,
+    num: -10
+  },
+  absolution: {
+    desc:
+      "If Darkness is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn.",
+    shortDesc:
+      "If Darkness is active, this Pokemon's Sp. Atk is 1.5x; loses 1/8 max HP per turn.",
+    onModifySpAPriority: 5,
+    onModifySpA: function(spa, pokemon) {
+      if (this.isWeather(["darkness"])) {
+        return this.chainModify(1.5);
+      }
+    },
+    onWeather: function(target, source, effect) {
+      if (effect.id === "darkness") {
+        this.damage(target.maxhp / 8, target, target);
+      }
+    },
+    id: "absolution",
+    name: "Absolution",
+    rating: 3,
+    num: -11
+  },
+  nightvibe: {
+    shortDesc: "If Darkness is active, this Pokemon's Speed is doubled.",
+    onModifySpe: function(spe, pokemon) {
+      if (this.isWeather(["Darkness"])) {
+        return this.chainModify(2);
+      }
+    },
+    id: "nightvibe",
+    name: "Night Vibe",
+    rating: 3,
+    num: -12
+  }
 };
 
 exports.BattleAbilities = BattleAbilities;
