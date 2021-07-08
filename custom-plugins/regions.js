@@ -671,16 +671,16 @@ exports.commands = {
 				/*badges: {},*/
 				users: [targetUser.userid],
 				ranks: {
-					'grandmaster': {
-						title: 'Grand Master',
+					'godfather': {
+						title: 'God Father',
 						users: [targetUser.userid],
 						permissions: {
 							all: true,
 						},
 						sortBy: 100,
 					},
-					'masters': {
-						title: 'Masters',
+					'capo': {
+						title: 'Capo',
 						users: [],
 						permissions: {
 							invite: true,
@@ -700,16 +700,16 @@ exports.commands = {
 						},
 						sortBy: 6,
 					},
-					'elite': {
-						title: 'Elite',
+					'elites': {
+						title: 'Elites',
 						users: [],
 						permissions: {
 							givebadge: true,
 						},
 						sortBy: 4,
 					},
-					'commeners': {
-						title: 'Commeners',
+					'members': {
+						title: 'Members',
 						users: [],
 						permissions: {},
 						sortBy: 2,
@@ -1774,6 +1774,7 @@ exports.commands = {
 				"/guild invite [user] - Invites a user to join a guild.<br />" +
 				"/guild kick [user] - Kicks a user from a guild.<br />" +
 				"/guild desc [description] - Sets a description for your guild, visible on /guild list.<br />" +
+          "/guild icon [link] - Sets a icon for your guild, visible on /guild list.<br />" +
 				"/guild pm [message] - Mass PM's a message to all online guild members<br />" +
 				"/guild accept [guild name] - Accepts an invitation to join a guild.<br />" +
 				"/guild decline [guild name] - Declines an invitation to join a guild.<br />" +

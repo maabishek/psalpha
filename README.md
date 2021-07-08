@@ -1,27 +1,61 @@
-Impulse Server @ Pokémon Showdown
+Alpha @ Pokémon Showdown
 ========================================================================
 
 Navigation: [Website][1] | **Server repository** | [Client repository][2] | [Dex repository][3]
 
-  [1]: http://impulse.psim.us
+  [1]: http://sun.psim.us/
   [2]: https://github.com/Zarel/Pokemon-Showdown-Client
   [3]: https://github.com/Zarel/Pokemon-Showdown-Dex
 
-[![Build Status](https://travis-ci.org/FlamePrince-PS/PokemonShowdown-Impulse.svg?branch=master)](https://travis-ci.com/FlamePrince-PS/PokemonShowdown-Impulse)
-[![Dependency Status](https://david-dm.org/FlamePrince-PS/PokemonShowdown-Impulse.svg)](https://david-dm.org/FlamePrince-PS/PokemonShowdown-Impulse)
-[![devDependency Status](https://david-dm.org/FlamePrince-PS/PokemonShowdown-Impulse/dev-status.svg)](https://david-dm.org/FlamePrince-PS/PokemonShowdown-Impulse?type=dev)
+[![Build Status](https://travis-ci.org/FlamePrince-PS/PokemonShowdown-Impulse.svg?branch=master)](https://travis-ci.com/FlamePrince-PS/PokemonShowdown-Alpha)
+[![Dependency Status](https://david-dm.org/FlamePrince-PS/PokemonShowdown-Impulse.svg)](https://david-dm.org/FlamePrince-PS/PokemonShowdown-Alpha)
+[![devDependency Status](https://david-dm.org/FlamePrince-PS/PokemonShowdown-Impulse/dev-status.svg)](https://david-dm.org/FlamePrince-PS/PokemonShowdown-Alpha?type=dev)
 
 Introduction
 ------------------------------------------------------------------------
 
-This is the source code for the game server of [Impulse][4], a website for Pokémon battling. Pokémon Showdown simulates singles, doubles and triples battles in all the games out so far (Generations 1 through 7).
+Well, i just copied AllianceSky-PS/Impulse which was a very cool repo and everyone used it to make a server. Though, i made this project with some edits no one have to do it later. Like it has no ``/noreply`` glitch and config's name is already set, and more. We added ton of things. Custom avatars are also available! DONT FORGET TO SEE THEM!
 
-This repository contains the files needed to set up your own Pokémon Showdown server. Note that to set up a server, you'll also need a server computer.
+Credits goes to:
 
-You can use your own computer as a server, but for other people to connect to your computer, you'll need to expose a port (default is 8000 but you can choose a different one) to connect to, which sometimes requires [port forwarding][5]. Note that some internet providers don't let you host a server at all, in which case you'll have to rent a VPS to use as a server.
+- Guangcong Luo [Zarel]- Main Code Owner, PS Owner
+- Other contributors in Pokemon Showdown (see [PS Credits][4])
+- Akash Kumar [Prince Sky]- [Impulse Repo][5] Owner.
+- Arjun Kumar [The Dark Sunset]- Repo Owner
+- Aadhikesh - Repo Owner, Helper
+- Ritik Gupta [Shade Ritik]- Helper and Best supporter
 
-  [4]: http://impulse.psim.us
-  [5]: http://en.wikipedia.org/wiki/Port_forwarding
+[4]: https://pokemonshowdown.com/credits
+[5]: https://github.com/AllianceSky-PS/Impulse
+
+How to make server on glitch:
+------------------------------------------------------------------------
+The best guide is [this][6], but still you can see this:
+
+Open [Glitch][7]
+
+Open New Project -> Hello Express
+
+Let project load and go in tools -> Import/Export -> Import from GitHub 
+
+It will ask you which repo. Enter ``TheImmortals/Alpha``
+
+Let the project load. And press show -> In a new window
+
+[6]: https://docs.google.com/document/d/1Fm-Sh7cfAuAmXgkEELo06NN0z0fm9JMdHGscOOTX49k/edit?usp=sharing
+[7]: https://glitch.com/
+
+
+Setting up an Administrator account and System Operator
+------------------------------------------------------------------------
+
+Once your server is up, you probably want to make yourself an Administrator (~)  and give yourself more powers on it. So here is the guide:
+
+Open a new file: ``config/usergroups.csv``
+
+Then give: ``[your username],~``  Note: No space or capitalization 
+
+Open ``config.js`` and go in line 107 and change “immortalsx” to your username. (comma seperate to add more users)
 
 
 Installing
@@ -35,17 +69,17 @@ Installing
 Detailed installation instructions
 ------------------------------------------------------------------------
 
-Pokémon Showdown requires you to have [Node.js][6] installed, 8.x or later (7.7 or later can work, but you might as well be on the latest stable).
+Pokémon Showdown requires you to have [Node.js][8] installed, 8.x or later (7.7 or later can work, but you might as well be on the latest stable).
 
-Next, obtain a copy of Pokémon Showdown Impulse. If you're reading this outside of GitHub, you've probably already done this. If you're reading this in GitHub, there's a "Clone or download" button near the top right (it's green). I recommend the "Open in Desktop" method - you need to install GitHub Desktop which is more work than "Download ZIP", but it makes it much easier to update in the long run (it lets you use the `/updateserver` command).
+Next, obtain a copy of Pokémon Showdown Alpha. If you're reading this outside of GitHub, you've probably already done this. If you're reading this in GitHub, there's a "Clone or download" button near the top right (it's green). I recommend the "Open in Desktop" method - you need to install GitHub Desktop which is more work than "Download ZIP", but it makes it much easier to update in the long run (it lets you use the `/updateserver` command).
 
 Pokémon Showdown is installed and run using a command line. In Mac OS X, open `Terminal` (it's in Utilities). In Windows, open `Command Prompt` (type `cmd` into the Start menu and it should be the first result). Type this into the command line:
 
     cd LOCATION
 
-Replace `LOCATION` with the location Pokémon Showdown Impulse is in (ending up with, for instance, `cd "~/Downloads/PokemonShowdown-Impulse"` or `cd "C:\Users\Bob\Downloads\PokemonShowdown-Impulse\"`).
+Replace `LOCATION` with the location Pokémon Showdown Alpha is in (ending up with, for instance, `cd "~/Downloads/PokemonShowdown-Alpha"` or `cd "C:\Users\Bob\Downloads\PokemonShowdown-Alpha\"`).
 
-This will set your command line's location to Pokémon Showdown-Impulse's folder. You'll have to do this each time you open a command line to run commands for Pokémon Showdown.
+This will set your command line's location to Pokémon Showdown-Alpha's folder. You'll have to do this each time you open a command line to run commands for Pokémon Showdown.
 
 Copy `config/config-example.js` into `config/config.js`, and edit as you please.
 
@@ -69,10 +103,10 @@ Yes, you can test even if you are behind a NAT without port forwarding: `http://
 
 You will be redirected to `http://SERVER.psim.us`. The reason your server is visited through `psim.us` is to make it more difficult for servers to see a user's password in any form, by handling logins globally. You can embed this in an `iframe` in your website if the URL is a big deal with you.
 
-If you truly want to host the client yourself, there is [a repository for the Pokémon Showdown Client][7]. It's not recommended for beginners, though.
+If you truly want to host the client yourself, there is [a repository for the Pokémon Showdown Client][9]. It's not recommended for beginners, though.
 
-  [6]: https://nodejs.org/
-  [7]: https://github.com/Zarel/Pokemon-Showdown-Client
+  [8]: https://nodejs.org/
+  [9]: https://github.com/Zarel/Pokemon-Showdown-Client
 
 
 Setting up an Administrator account
@@ -118,29 +152,31 @@ Community
 
 PS has a built-in chat service. Join our main server to talk to us!
 
-You can also visit the [Pokémon Showdown forums][8] for discussion and help.
+You can also visit the [Pokémon Showdown forums][10] for discussion and help.
 
-  [8]: https://www.smogon.com/forums/forums/pok%C3%A9mon-showdown.209/
+  [10]: https://www.smogon.com/forums/forums/pok%C3%A9mon-showdown.209/
 
-If you'd like to contribute to programming and don't know where to start, feel free to check out [Ideas for New Developers][9].
+If you'd like to contribute to programming and don't know where to start, feel free to check out [Ideas for New Developers][11].
 
-  [9]: https://github.com/Zarel/Pokemon-Showdown/issues/2444
+  [11]: https://github.com/Zarel/Pokemon-Showdown/issues/2444
 
 
 License
 ------------------------------------------------------------------------
 
-Pokémon Showdown's server is distributed under the terms of the [MIT License][10].
+Pokémon Showdown's server is distributed under the terms of the [MIT License][12].
 
-  [10]: https://github.com/Zarel/Pokemon-Showdown/blob/master/LICENSE
+  [12]: https://github.com/Zarel/Pokemon-Showdown/blob/master/LICENSE
 
 
 Maintainers
 ------------------------------------------------------------------------
 
-Owner
+Owners:
 
-- FlamePrince-PS
+- The Dark Sunset
+- Aadhikesh
+- Prince Hoenn
 
 Major Contributors
 

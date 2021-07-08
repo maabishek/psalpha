@@ -242,18 +242,20 @@ exports.commands = {
 	},
 	showhelp: ["/show - Displays user's global rank. Requires: & ~"],
 
-	credits: function (target, room, user) {
-		let popup = "|html|" + "<font size=5 color=#0066ff><u>" + serverName + " Credits</b></u></font><br />" +
-			"<br />" +
-			"<u><b>Server Maintainers:</u></b><br />" +
-			"- " + Server.nameColor('PrinceSky', true) + " (Owner, Policy + Technical Admin, Development)<br />" +
-			"- " + Server.nameColor('Anrin N', true) + " (Owner, Technical Admin, Development)<br />" +
-			"- " + Server.nameColor('Shivay', true) + " (Technical Admin, Development)<br />" +
-			"- " + Server.nameColor('A Flying Phantom', true) + " (Technical Admin, Development, CSS)<br />" +
+credits: function(target, room, user) {
+    let popup =
+      "|html|" +
+      "<font size=5 color=#FF0068 ><u>" +
+      serverName +
+      " Credits</b></u></font><br />" +
+      "<br />" +
+      "<u><b>Main Contributors:</u></b><br />" +
+			"- " + Server.nameColor('XDragonPrince', true) + " (Owner, Policy + Technical Admin, Development)<br />" +
+			"- " + Server.nameColor('Aadhikesh', true) + " (Owner, Technical Admin, Development)<br />" +
 			"<br />" +
 			"<u><b>Contributors:</b></u><br />" +
-			"- " + Server.nameColor('Pokem9n', true) + " (Admin)<br />" +
-			"- " + Server.nameColor('A Helpful Rayquaza', true) + " (Admin, Development)<br />" +
+			"- " + Server.nameColor('Hoeen Hero', true) + " (Admin of Server registeration)<br />" +
+			"- " + Server.nameColor('Zarel', true) + " (Main Code Owner)<br />" +
 			/*"- " + Server.nameColor('MechSteelix', true) + " (Policy Leader)<br/>" +
 			"- " + Server.nameColor('Electric Z', true) + " (Policy Admin)<br />" +
 			"- " + Server.nameColor('Opple', true) + " (Community Leader)<br />" +
@@ -515,12 +517,7 @@ exports.commands = {
 			return this.errorReply('An error occured in the command.'); // This should never happen.
 		}
 	},
-	usetokenhelp: [
-		'/usetoken [token], [argument(s)] - Redeems a token from the shop. Accepts the following arguments: ',
-		'/usetoken avatar, [image] | /usetoken declare, [message] | /usetoken color, [hex code]',
-		'/usetoken icon [image] | /usetoken title, [name], [hex code] | /usetoken emote, [name], [image]',
-		'/usetoken disableintroscroll [room name] | /usetoken background, [img] | /usetoken music, [song], [name] | /usetoken roomshop, [room name]',
-	],
+
 
 	bonus: 'dailybonus',
 	checkbonus: 'dailybonus',
