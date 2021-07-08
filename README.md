@@ -1,9 +1,9 @@
-Alpha @ Pokémon Showdown
+Aether @ Pokémon Showdown
 ========================================================================
 
 Navigation: [Website][1] | **Server repository** | [Client repository][2] | [Dex repository][3]
 
-  [1]: http://sun.psim.us/
+  [1]: https://the-aether.glitch.me/
   [2]: https://github.com/Zarel/Pokemon-Showdown-Client
   [3]: https://github.com/Zarel/Pokemon-Showdown-Dex
 
@@ -14,19 +14,17 @@ Navigation: [Website][1] | **Server repository** | [Client repository][2] | [Dex
 Introduction
 ------------------------------------------------------------------------
 
-Well, i just copied AllianceSky-PS/Impulse which was a very cool repo and everyone used it to make a server. Though, i made this project with some edits no one have to do it later. Like it has no ``/noreply`` glitch and config's name is already set, and more. We added ton of things. Custom avatars are also available! DONT FORGET TO SEE THEM!
+This repo is originally taken from HoeenCoder's repo on the server Spacial Gaze (Which moved now.) This repo provides a few additions for the aether server such as new mega evolutions, New Moves, New Abilities and much more. The server is constantly being updated so be sure to check it out!
 
 Credits goes to:
 
 - Guangcong Luo [Zarel]- Main Code Owner, PS Owner
 - Other contributors in Pokemon Showdown (see [PS Credits][4])
-- Akash Kumar [Prince Sky]- [Impulse Repo][5] Owner.
-- Arjun Kumar [The Dark Sunset]- Repo Owner
-- Aadhikesh - Repo Owner, Helper
-- Ritik Gupta [Shade Ritik]- Helper and Best supporter
+- HoeenCoder [HoennHero]- [Special Gaze Repo][5] Owner.
+- (Redacted) [Not Living Inside]- Repo Editor
 
 [4]: https://pokemonshowdown.com/credits
-[5]: https://github.com/AllianceSky-PS/Impulse
+[5]: https://github.com/HoeenCoder/SpacialGaze
 
 How to make server on glitch:
 ------------------------------------------------------------------------
@@ -38,7 +36,7 @@ Open New Project -> Hello Express
 
 Let project load and go in tools -> Import/Export -> Import from GitHub 
 
-It will ask you which repo. Enter ``TheImmortals/Alpha``
+It will ask you which repo. Enter ``Night-Vibe/Aether``
 
 Let the project load. And press show -> In a new window
 
@@ -49,16 +47,24 @@ Let the project load. And press show -> In a new window
 Setting up an Administrator account and System Operator
 ------------------------------------------------------------------------
 
-Once your server is up, you probably want to make yourself an Administrator (~)  and give yourself more powers on it. So here is the guide:
+Once your server is up, you probably want to make yourself an Administrator (~) on it.
 
-Open a new file: ``config/usergroups.csv``
+### config/usergroups.csv
 
-Then give: ``[your username],~``  Note: No space or capitalization 
+To become an Administrator, create a file named `config/usergroups.csv` containing
 
-Open ``config.js`` and go in line 107 and change “immortalsx” to your username. (comma seperate to add more users)
+    USER,~
+
+Replace `USER` with the username that you would like to become an Administrator. Do not put a space between the comma and the tilde.
+
+This username must be registered. If you do not have a registered account, you can create one using the Register button in the settings menu (it looks like a gear) in the upper-right of Pokémon Showdown.
+
+Once you're an administrator, you can promote/demote others easily with the `/globaladmin`, `/globalleader`, `/globalmod`, etc commands.
+
+To make someone a system operator, open ``config.js`` and go in line 107 and change “placeholder” to your username. (comma seperate to add more users)
 
 
-Installing
+Installing (If server is being made official)
 ------------------------------------------------------------------------
 
     ./pokemon-showdown
@@ -109,22 +115,7 @@ If you truly want to host the client yourself, there is [a repository for the Po
   [9]: https://github.com/Zarel/Pokemon-Showdown-Client
 
 
-Setting up an Administrator account
-------------------------------------------------------------------------
 
-Once your server is up, you probably want to make yourself an Administrator (~) on it.
-
-### config/usergroups.csv
-
-To become an Administrator, create a file named `config/usergroups.csv` containing
-
-    USER,~
-
-Replace `USER` with the username that you would like to become an Administrator. Do not put a space between the comma and the tilde.
-
-This username must be registered. If you do not have a registered account, you can create one using the Register button in the settings menu (it looks like a gear) in the upper-right of Pokémon Showdown.
-
-Once you're an administrator, you can promote/demote others easily with the `/globaladmin`, `/globalleader`, `/globalmod`, etc commands.
 
 
 Browser support
@@ -172,13 +163,17 @@ Pokémon Showdown's server is distributed under the terms of the [MIT License][1
 Maintainers
 ------------------------------------------------------------------------
 
-Owners:
+Editors:
 
-- The Dark Sunset
-- Aadhikesh
-- Prince Hoenn
+Not Living Inside
 
-Major Contributors
+Major Contributors:
+
+Zarel
+HoeenHero
+TapuJ0J0
+ImmortalsX
+
 
 **All respectable custom-plugins & SGgame creators.**
 
