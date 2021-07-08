@@ -505,13 +505,50 @@ const commands = {
       ash: 294,
 
 
-			bw2elesa: '#bw2elesa',
-			teamrocket: '#teamrocket',
-			yellow: '#yellow',
-			zinnia: '#zinnia',
-			clemont: '#clemont',
-			aeonic: '#aeonic',
-			wally: '#wally',
+      bw2elesa: "#bw2elesa",
+      teamrocket: "#teamrocket",
+      yellow: "#yellow",
+      zinnia: "#zinnia",
+      clemont: "#clemont",
+      wally: "#wally",
+      aeonic: "#aeonic",
+      zeroluxgiven: "#zeroluxgiven",
+      averardo: "#averardo",
+      asgdf: "#asgdf",
+      kalalokki: "#kalalokki",
+      adiass: "#adiass",
+      snaquaza: "#snaquaza",
+      naruto: "#tjay",
+      swordgirl: "#annika",
+      potato: "#fcl8skystrikers",
+      peoplesss: "#eternally",
+      angel: "#articuno",
+      johto: "#ceteris",
+      blazik: "#clone",
+      wally: "#wally",
+      wcop2020canada: "#wcop2020canada",
+      eeeeeeee: "#yagura",
+      sceptiletree: "#prince",
+      snowpog: "#snowydoe",
+      dewre: "#redew",
+      mewtwoistrashlmao: "#wcop2020uswest",
+      greninjar: "#yashgreninja",
+      greninjarshade: "#wcop2020asia",
+      notatrap: "#trace",
+      altariaace: "#theender",
+      leafeonblade: "#thatcrazyrussian",
+      hollowknight: "#skullknight",
+      bluu: "#ridaz",
+      bnygrilun: "#reisen (1)",
+      redgbc: "#pre",
+      mawilecynth: "#pomman",
+      mewtwoarmored: "#mjb",
+      glados: "#legitimateusername",
+      kaiju: "#kaijubunny",
+      madara: "#jordy",
+      akatsuki: "#flare",
+      teamflare: "#blitzamirin",
+      glaliecap: "#cheese555",
     };
     if (avatarTable.hasOwnProperty(avatarid)) {
       avatar = avatarTable[avatarid];
@@ -543,7 +580,6 @@ const commands = {
   logout: function(target, room, user) {
     user.resetName();
   },
-
   noreply(target, room, user) {
     if (!target.startsWith("/")) return this.parse("/help noreply");
     return this.parse(target, true);
@@ -551,6 +587,9 @@ const commands = {
   noreplyhelp: [
     `/noreply [command] - Runs the command without displaying the response.`
   ],
+  updatesettings(target, room, user) {
+  },
+  
 
   r: "reply",
   reply: function(target, room, user) {
@@ -599,6 +638,7 @@ const commands = {
   msghelp: [
     `/msg OR /whisper OR /w [username], [message] - Send a private message.`
   ],
+  
 
   "!invite": true,
   inv: "invite",
