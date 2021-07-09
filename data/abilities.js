@@ -5302,7 +5302,7 @@ let BattleAbilities = {
     rating: 5,
     num: -10
   },
-	  godforce: {
+    godforce: {
     shortDesc:
       "This Pokemon's attacks that are not very effective deals significantly more damage.",
     onModifyDamage: function(damage, source, target, move) {
@@ -5319,7 +5319,7 @@ let BattleAbilities = {
   noctem: {
     shortDesc: "On switch-in, this Pokemon summons Darkness.",
     onStart: function(source) {
-      this.setWeather("darkness");
+      this.setWeather("Darkness");
     },
     id: "noctem",
     name: "Noctem",
@@ -5333,12 +5333,12 @@ let BattleAbilities = {
       "If Darkness is active, this Pokemon's Sp. Atk is 1.5x; loses 1/8 max HP per turn.",
     onModifySpAPriority: 5,
     onModifySpA: function(spa, pokemon) {
-      if (this.isWeather(["darkness"])) {
+      if (this.isWeather(["Darkness"])) {
         return this.chainModify(1.5);
       }
     },
     onWeather: function(target, source, effect) {
-      if (effect.id === "darkness") {
+      if (effect.id === "Darkness") {
         this.damage(target.maxhp / 8, target, target);
       }
     },
@@ -5358,7 +5358,52 @@ let BattleAbilities = {
     name: "Night Vibe",
     rating: 3,
     num: -12
-  }
+  },
+  heavysleet: {
+    shortDesc: "On switch-in, this Pokemon summons Sleet.",
+    onStart: function(source) {
+      this.setWeather("Sleet");
+    },
+    id: "heavysleet",
+    name: "Heavy Sleet",
+    rating: 4,
+    num: -13
+  },
+  infinitevoid: {
+    shortDesc: "On switch-in, this Pokemon summons The Void.",
+    onStart: function(source) {
+      this.setWeather("The Void");
+    },
+    onImmunity: function(type, pokemon) {
+      if (type === "The Void")
+        return false;
+    },
+    id: "infinitevoid",
+    name: "Infinite Void",
+    rating: 5,
+    num: -14
+  },
+  drkness: {
+    shortDesc: "On switch-in, this Pokemon summons The Void.",
+    id: "drkness",
+    name: "Darkness",
+    rating: 0.1,
+    num: -15
+  },
+  slt: {
+    shortDesc: "On switch-in, this Pokemon summons The Void.",
+    id: "slt",
+    name: "Sleet",
+    rating: 0.1,
+    num: -16
+  },
+  void: {
+    shortDesc: "On switch-in, this Pokemon summons The Void.",
+    id: "void",
+    name: "The Void",
+    rating: 0.1,
+    num: -17
+  },
 };
 
 exports.BattleAbilities = BattleAbilities;
