@@ -14,7 +14,7 @@ Navigation: [Website][1] | **Server repository** | [Client repository][2] | [Dex
 Introduction
 ------------------------------------------------------------------------
 
-This repo is originally taken from HoeenCoder's repo on the server Spacial Gaze (Which moved now.) This repo provides a few additions for the aether server such as new mega evolutions, New Moves, New Abilities and much more. The server is constantly being updated so be sure to check it out!
+This repo is originally taken from HoeenCoder's repo on the server Spacial Gaze (Which moved now.) This repo has a few additions for the the server such as noreply, minigames, tournament points etc. The server is constantly being updated so be sure to check it out!
 
 Credits goes to:
 
@@ -171,7 +171,7 @@ Major Contributors:
 
 Zarel
 HoeenHero
-TapuJ0J0
+Joe
 ImmortalsX
 
 
