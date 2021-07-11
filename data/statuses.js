@@ -848,38 +848,76 @@ let BattleStatuses = {
 			this.add('-weather', 'none');
 		},
 	},
-	sleet: {
-		name: 'Sleet',
-		id: 'sleet',
+	hailstorm: {
+		name: 'Hailstorm',
+		id: 'hailstorm',
 		num: 0,
 		effectType: 'Weather',
 		duration: 6,
 		onEffectiveness: function (typeMod, target, type, move) {
 			if (move && move.effectType === 'Move' && type === 'Ice' && typeMod > 0) {
-				this.add('-activate', '', 'sleet');
+				this.add('-activate', '', 'hailstorm');
+        this.debug('Hailstorm Ice weakness negate');
 				return 0;
 			}
 		},
 		onWeatherModifyDamage: function (damage, attacker, defender, move) {
 			if (move.type === 'Ice') {
-				this.debug('Sleet Ice boost');
+				this.debug('Hailstorm Ice boost');
 				return this.chainModify(1.1);
 			}
 		},
 		onStart: function (battle, source, effect) {
 			if (effect && effect.effectType === 'Ability') {
 				if (this.gen <= 5) this.effectData.duration = 0;
-				this.add('-weather', 'Sleet', '[from] ability: ' + effect, '[of] ' + source);
+				this.add('-weather', 'hailstorm', '[from] ability: ' + effect, '[of] ' + source);
 			} else {
-				this.add('-weather', 'Sleet');
+				this.add('-weather', 'hailstorm');
 			}
 		},
 		onResidualOrder: 1,
 		onResidual: function () {
-			this.add('-weather', 'Sleet', '[upkeep]');
+			this.add('-weather', 'hailstorm', '[upkeep]');
 			this.eachEvent('Weather');
 		},
 		onWeather: function (target) {
+			this.damage(target.maxhp / 12);
+		},
+		onEnd: function () {
+			this.add('-weather', 'none');
+		},
+	},
+  thevoid: {
+		name: 'The Void',
+		id: 'thevoid',
+		num: 0,
+		effectType: 'Weather',
+		duration: 0,
+		onTryMove: function (target, source, effect) {
+			if (effect.type === 'Fairy' && effect.category !== 'Status') {
+				this.debug('The Void, Fairy suppress');
+				this.add('-fail', source, effect, '[from] The Void');
+				return null;
+			}
+		},
+		onWeatherModifyDamage: function (damage, attacker, defender, move) {
+			if (move.type === 'Ghost', 'Dark') {
+				this.debug('The Void Ghost & Dark boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onStart: function (battle, source, effect) {
+			this.add('-weather', 'The Void', '[from] ability: ' + effect, '[of] ' + source);
+		},
+		onImmunity: function (type) {
+			if (type === 'flinch', 'trapped') return false;
+		},
+		onResidualOrder: 1,
+		onResidual: function () {
+			this.add('-weather', 'The Void', '[upkeep]');
+			this.eachEvent('Weather');
+		},
+    onWeather: function (target) {
 			this.damage(target.maxhp / 12);
 		},
 		onEnd: function () {

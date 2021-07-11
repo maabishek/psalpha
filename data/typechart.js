@@ -197,6 +197,7 @@ let BattleTypeChart = {
 	"Ghost": {
 		damageTaken: {
 			trapped: 3,
+			thevoid: 3,
 			"Bug": 2,
 			"Dark": 1,
 			"Dragon": 0,
@@ -272,7 +273,7 @@ let BattleTypeChart = {
 	"Ice": {
 		damageTaken: {
 			hail: 3,
-			sleet: 3,
+			hailstorm: 3,
 			frz: 3,
 			"Bug": 0,
 			"Dark": 0,

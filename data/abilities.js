@@ -5359,18 +5359,18 @@ let BattleAbilities = {
     rating: 3,
     num: -12
   },
-  heavysleet: {
-    shortDesc: "On switch-in, this Pokemon summons Sleet.",
+  nuclearhail: {
+    shortDesc: "On switch-in, this Pokemon summons Hail Storm.",
     onStart: function(source) {
-      this.setWeather("Sleet");
+      this.setWeather("hailstorm");
     },
-    id: "heavysleet",
-    name: "Heavy Sleet",
+    id: "nuclearhail",
+    name: "Nuclear Hail",
     rating: 4,
     num: -13
   },
   infinitevoid: {
-    shortDesc: "On switch-in, this Pokemon summons The Void.",
+    shortDesc: "On switch-in, this Pokemon summons The Void",
     onStart: function(source) {
       this.setWeather("The Void");
     },
@@ -5384,21 +5384,21 @@ let BattleAbilities = {
     num: -14
   },
   drkness: {
-    shortDesc: "On switch-in, this Pokemon summons The Void.",
+    shortDesc: "Ghost & Dark Dmg+; Fairy Dmg-.",
     id: "drkness",
     name: "Darkness",
     rating: 0.1,
     num: -15
   },
-  slt: {
-    shortDesc: "On switch-in, this Pokemon summons The Void.",
-    id: "slt",
-    name: "Sleet",
+  hailstorm: {
+    shortDesc: "Ice slightly more powerful; Ice type weakness negated.",
+    id: "hailstrm",
+    name: "Hail Storm",
     rating: 0.1,
     num: -16
   },
   void: {
-    shortDesc: "On switch-in, this Pokemon summons The Void.",
+    shortDesc: "Ghost, Dark Dmg+; Fairy Dmg-, Damages Non Ghost types.",
     id: "void",
     name: "The Void",
     rating: 0.1,
