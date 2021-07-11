@@ -1,3 +1,8 @@
+
+
+//Tournament points system
+//Implemented by Not Living Inside
+
 "use strict";
 
 const FS = require("../lib/fs.js");
@@ -603,3 +608,5 @@ exports.commands = {
     this.sendReplyBox(output);
   }
 };
+
+//I want to die
